@@ -104,7 +104,7 @@
   },
   "scripts": {
     "test": "",
-    "build": "npm install && nodemon src/server.js",
+    "build": "bodemon src/server.js",
     "start": "nodemon src/server.js"
   },
   "author": "",
