@@ -24,6 +24,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  products_page_description: {
+    type: [String],
+    required: true,
+  },
   product_page_description: {
     type: [String],
     required: true,
