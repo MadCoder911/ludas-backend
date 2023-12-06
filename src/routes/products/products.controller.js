@@ -1,13 +1,25 @@
 const Product = require("../../models/product");
 async function getAllProducts(req, res, next) {
-  try {
-    const products = await Product.find();
-    if (!products) {
-      res.status(400).json({ message: "not found" });
+  if (req.query) {
+    try {
+      const products = await Product.find(req.query);
+      if (!products) {
+        res.status(400).json({ message: "not found" });
+      }
+      res.status(200).json(products);
+    } catch (error) {
+      next(error);
     }
-    res.status(200).json(products);
-  } catch (error) {
-    next(error);
+  } else {
+    try {
+      const products = await Product.find();
+      if (!products) {
+        res.status(400).json({ message: "not found" });
+      }
+      res.status(200).json(products);
+    } catch (error) {
+      next(error);
+    }
   }
 }
 //
@@ -22,5 +34,7 @@ async function postProduct(req, res, next) {
     next(error);
   }
 }
+//
+//
 
 module.exports = { getAllProducts, postProduct };

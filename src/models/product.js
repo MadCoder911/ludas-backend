@@ -9,9 +9,6 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  product_color: {
-    type: String,
-  },
   title_img: {
     type: String,
     required: false,
@@ -37,6 +34,10 @@ const ProductSchema = new mongoose.Schema({
   },
   price_after: {
     type: Number,
+    required: true,
+  },
+  nutrition_facts: {
+    type: {},
     required: true,
   },
   home_pic: {
