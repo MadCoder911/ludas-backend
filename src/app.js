@@ -18,6 +18,7 @@ app.use(
     ],
     origin: ["http://localhost:3000", "https://ludas-icecream.vercel.app"],
     credentials: true, //i
+    preflightContinue: false,
   })
 );
 app.use(cookieParser());
