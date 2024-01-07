@@ -46,6 +46,7 @@ const login = async (req, res, next) => {
     res.cookie("access_token", token, {
       httpOnly: true,
       secure: true,
+      domain: "https://ludas-icecream.vercel.app/login",
       sameSite: "None",
     });
     res.status(200).json({ ...otherDetails });
