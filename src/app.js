@@ -8,17 +8,8 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(
   cors({
-    allowedHeaders: [
-      "Origin",
-      "X-Requested-With",
-      "Content-Type",
-      "Accept",
-      "X-Access-Token",
-      "Authorization",
-    ],
     origin: ["http://localhost:3000", "https://ludas-icecream.vercel.app"],
     credentials: true, //i
-    preflightContinue: false,
   })
 );
 app.use(cookieParser());
