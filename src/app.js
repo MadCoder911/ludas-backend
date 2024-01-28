@@ -5,6 +5,7 @@ const emailRouter = require("./routes/email/email.router");
 const messagesRouter = require("./routes/message/message.router");
 const authRouter = require("./routes/auth/auth.router");
 const cookieParser = require("cookie-parser");
+const ordersRouter = require("./routes/orders/orders.router");
 const app = express();
 app.use(
   cors({
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(emailRouter);
 app.use(productsRouter);
 app.use(messagesRouter);
+app.use(ordersRouter);
 app.use(authRouter);
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
