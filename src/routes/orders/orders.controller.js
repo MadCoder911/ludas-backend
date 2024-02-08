@@ -8,7 +8,15 @@ const postOrder = async (req, res, next) => {
     next(error);
   }
 };
-const getOrder = async (req, res, next) => {};
+const getOrder = async (req, res, next) => {
+  try {
+    const orders = await Orders.find({});
+    console.log(orders);
+    res.status(200).json(orders);
+  } catch (error) {
+    next(error);
+  }
+};
 const putOrder = async (req, res, next) => {};
 const deleteOrder = async (req, res, next) => {};
 

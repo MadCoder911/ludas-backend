@@ -4,8 +4,8 @@ const { verifyUser, verifyAdmin } = require("../../utils/verifyToken");
 const ordersRouter = express.Router();
 
 ordersRouter.post("/orders", postOrder);
+ordersRouter.get("/orders", verifyAdmin, getOrder);
 ordersRouter.put("/orders", verifyAdmin, putOrder);
-ordersRouter.get("orders", verifyAdmin, getOrder);
 ordersRouter.delete("orders");
 
 module.exports = ordersRouter;

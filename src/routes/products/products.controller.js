@@ -16,7 +16,7 @@ async function getAllProducts(req, res, next) {
       if (!products) {
         res.status(400).json({ message: "not found" });
       }
-      res.status(200).json(products);
+      res.status(200).json({ data: products });
     } catch (error) {
       next(error);
     }

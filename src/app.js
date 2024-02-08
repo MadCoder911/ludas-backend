@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
+      "http://localhost:3001",
       "https://ludas-icecream.vercel.app",
       "https://ludas-icecream.vercel.app/login",
     ],
