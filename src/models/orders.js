@@ -41,6 +41,10 @@ const OrdersSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
+  time: {
+    type: String,
+    required: false,
+  },
   status: {
     type: String,
     default: "pending",

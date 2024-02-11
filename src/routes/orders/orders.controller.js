@@ -17,7 +17,26 @@ const getOrder = async (req, res, next) => {
     next(error);
   }
 };
-const putOrder = async (req, res, next) => {};
-const deleteOrder = async (req, res, next) => {};
+const putOrder = async (req, res, next) => {
+  const { _id, ...order } = req.body;
+  try {
+    const updated = await Orders.findOneAndUpdate({ _id: _id }, order, {
+      new: true,
+    });
+    res.status(204).json(updated);
+  } catch (error) {
+    next(error);
+  }
+};
+const deleteOrder = async (req, res, next) => {
+  const { _id } = req.body;
+
+  try {
+    const updated = await Orders.findOneAndDelete({ _id: _id });
+    res.status(202).json({ message: "Order deleted" });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = { postOrder, putOrder, getOrder, deleteOrder };
